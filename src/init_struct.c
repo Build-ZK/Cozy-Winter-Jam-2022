@@ -10,35 +10,26 @@
 
 void init_level1(s_game_t **game)
 {
-    sfVector2f carrot_pos = {0, 0};
-    sfVector2f snowball1_pos = {100, 100};
-    sfVector2f snowball2_pos = {200, 200};
+    (*game)->obj_level1[0] = 0;
+    (*game)->obj_level1[1] = 0;
+    (*game)->obj_level1[2] = 0;
     (*game)->level[1] = create_my_sprite("./image/Fond_Level1.jpg");
-    (*game)->pos_level_1[0] = carrot_pos;
-    (*game)->pos_level_1[1] = snowball1_pos;
-    (*game)->pos_level_1[2] = snowball2_pos;
 }
 
 void init_level2(s_game_t **game)
 {
-    sfVector2f carrot_pos = {0, 0};
-    sfVector2f snowball1_pos = {100, 100};
-    sfVector2f snowball2_pos = {200, 200};
+    (*game)->obj_level2[0] = 0;
+    (*game)->obj_level2[1] = 0;
+    (*game)->obj_level2[2] = 0;
     (*game)->level[2] = create_my_sprite("./image/Fond_Level2.png");
-    (*game)->pos_level_2[0] = carrot_pos;
-    (*game)->pos_level_2[1] = snowball1_pos;
-    (*game)->pos_level_2[2] = snowball2_pos;
 }
 
 void init_level3(s_game_t **game)
 {
-    sfVector2f carrot_pos = {0, 0};
-    sfVector2f snowball1_pos = {100, 100};
-    sfVector2f snowball2_pos = {200, 200};
+    (*game)->obj_level3[0] = 0;
+    (*game)->obj_level3[1] = 0;
+    (*game)->obj_level3[2] = 0;
     (*game)->level[3] = create_my_sprite("./image/Fond_Level3.jpg");
-    (*game)->pos_level_3[0] = carrot_pos;
-    (*game)->pos_level_3[1] = snowball1_pos;
-    (*game)->pos_level_3[2] = snowball2_pos;
 }
 
 s_game_t *init_struct(void)
@@ -52,6 +43,11 @@ s_game_t *init_struct(void)
     game->level3 = 0;
     game->level[0] = create_my_sprite("./image/Main_Menu_Fond.jpg");
     game->level[4] = create_my_sprite("./image/Level_Select_hud.png");
+    game->level[5] = create_my_sprite("./image/Find_Objet.png");
+    game->level[6] = create_my_sprite("./image/check_icon.png");
+    game->level[7] = create_my_sprite("./image/check_icon.png");
+    game->level[8] = create_my_sprite("./image/check_icon.png");
+    game->level[9] = create_my_sprite("./image/win.png");
     game->button[0] = create_my_sprite("./image/Play_Button.png");
     init_level1(&game);
     init_level2(&game);

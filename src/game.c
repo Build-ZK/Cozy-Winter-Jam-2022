@@ -29,11 +29,11 @@ void game_sub(s_game_t **game)
     }
     sfRenderWindow_drawSprite((*game)->window, (*game)->level[0], NULL);
     if ((*game)->level1 == 1) {
-        level_1(game);
+        level_1(game, cursor_pos);
     } else if ((*game)->level2 == 1) {
-        level_2(game);
+        level_2(game, cursor_pos);
     } else if ((*game)->level3 == 1) {
-        level_3(game);
+        level_3(game, cursor_pos);
     } else if ((*game)->choose_level_menu == 1) {
         level_choose_menu(game, cursor_pos);
     } else {

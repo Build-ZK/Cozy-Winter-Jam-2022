@@ -18,12 +18,12 @@ typedef struct s_game {
     int level1;
     int level2;
     int level3;
+    int obj_level1[3];
+    int obj_level2[3];
+    int obj_level3[3];
     sfRenderWindow *window;
-    sfSprite *level[5];
+    sfSprite *level[10];
     sfSprite *button[5];
-    sfVector2f pos_level_1[3];
-    sfVector2f pos_level_2[3];
-    sfVector2f pos_level_3[3];
 } s_game_t;
 
 s_game_t *init_struct(void);
@@ -33,6 +33,6 @@ sfRenderWindow *create_my_window(unsigned int width, unsigned int height);
 
 void level_choose_menu(s_game_t **game, sfVector2f curs_pos);
 
-void level_1(s_game_t **game);
-void level_2(s_game_t **game);
-void level_3(s_game_t **game);
+void level_1(s_game_t **game, sfVector2f curs_pos);
+void level_2(s_game_t **game, sfVector2f curs_pos);
+void level_3(s_game_t **game, sfVector2f curs_pos);
