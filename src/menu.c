@@ -10,11 +10,14 @@
 void level_choose_menu(s_game_t **game, sfVector2f curs_pos)
 {
     sfVector2f level_select_hud_pos = {690, 150};
+    sfVector2f button_leave = {870, 800};
     sfVector2f level1 = {811, 389};
     sfVector2f level2 = {920, 388};
     sfVector2f level3 = {1030, 389};
     sfSprite_setPosition((*game)->level[4], level_select_hud_pos);
     sfRenderWindow_drawSprite((*game)->window, (*game)->level[4], NULL);
+    sfSprite_setPosition((*game)->button[1], button_leave);
+    sfRenderWindow_drawSprite((*game)->window, (*game)->button[1], NULL);
     if ((*game)->event.type == sfEvtMouseButtonPressed) {
         if (curs_pos.x <= (level1.x + 50) && curs_pos.x >= (level1.x)) {
             if (curs_pos.y <= (level1.y + 50) && curs_pos.y >= level1.y) {
@@ -29,6 +32,11 @@ void level_choose_menu(s_game_t **game, sfVector2f curs_pos)
         if (curs_pos.x <= (level3.x + 50) && curs_pos.x >= (level3.x)) {
             if (curs_pos.y <= (level3.y + 50) && curs_pos.y >= level3.y) {
                 (*game)->level3 = 1;
+            }
+        }
+        if (curs_pos.x <= (button_leave.x + 100) && curs_pos.x >= (button_leave.x)) {
+            if (curs_pos.y <= (button_leave.y + 100) && curs_pos.y >= button_leave.y) {
+                sfRenderWindow_close((*game)->window);
             }
         }
     }

@@ -49,6 +49,7 @@ s_game_t *init_struct(void)
     game->level[8] = create_my_sprite("./image/check_icon.png");
     game->level[9] = create_my_sprite("./image/win.png");
     game->button[0] = create_my_sprite("./image/Play_Button.png");
+    game->button[1] = create_my_sprite("./image/Bouton_Leave.png");
     init_level1(&game);
     init_level2(&game);
     init_level3(&game);
