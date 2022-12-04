@@ -16,7 +16,7 @@ void end_level_2(s_game_t **game, sfVector2f curs_pos)
     if ((*game)->event.type == sfEvtMouseButtonPressed) {
         if (curs_pos.x <= (button.x + 100) && curs_pos.x >= (button.x)) {
             if (curs_pos.y <= (button.y + 100) && curs_pos.y >= button.y) {
-                (*game)->level1 = 0;
+                (*game)->level2 = 0;
             }
         }
     }
@@ -30,27 +30,26 @@ void level_2(s_game_t **game, sfVector2f curs_pos)
     sfVector2f check_carrot_pos = {30, 890};
     sfVector2f check_snowball1_pos = {138, 890};
     sfVector2f check_snowball2_pos = {245, 890};
-    sfVector2f carrot_pos = {535, 753};
-    sfVector2f snowball1_pos = {696, 4};
-    sfVector2f snowball2_pos = {1169, 605};
+    sfVector2f carrot_pos = {933, 409};
+    sfVector2f snowball1_pos = {156, 756};
+    sfVector2f snowball2_pos = {344, 142};
     sfRenderWindow_drawSprite((*game)->window, (*game)->level[2], NULL);
     sfSprite_setScale((*game)->level[5], find_obj_scale);
     sfSprite_setPosition((*game)->level[5], find_obj_pos);
     sfRenderWindow_drawSprite((*game)->window,(*game)->level[5], NULL);
     if ((*game)->event.type == sfEvtMouseButtonPressed) {
-        printf("%f, %f\n", curs_pos.x, curs_pos.y);
-        if (curs_pos.x <= (carrot_pos.x + 50) && curs_pos.x >= (carrot_pos.x)) {
-            if (curs_pos.y <= (carrot_pos.y + 50) && curs_pos.y >= carrot_pos.y) {
+        if (curs_pos.x <= (carrot_pos.x + 20) && curs_pos.x >= (carrot_pos.x)) {
+            if (curs_pos.y <= (carrot_pos.y + 20) && curs_pos.y >= carrot_pos.y) {
                 (*game)->obj_level2[0] = 1;
             }
         }
-        if (curs_pos.x <= (snowball1_pos.x + 50) && curs_pos.x >= (snowball1_pos.x)) {
-            if (curs_pos.y <= (snowball1_pos.y + 50) && curs_pos.y >= snowball1_pos.y) {
+        if (curs_pos.x <= (snowball1_pos.x + 10) && curs_pos.x >= (snowball1_pos.x)) {
+            if (curs_pos.y <= (snowball1_pos.y + 10) && curs_pos.y >= snowball1_pos.y) {
                 (*game)->obj_level2[1] = 1;
             }
         }
-        if (curs_pos.x <= (snowball2_pos.x + 50) && curs_pos.x >= (snowball2_pos.x)) {
-            if (curs_pos.y <= (snowball2_pos.y + 50) && curs_pos.y >= snowball2_pos.y) {
+        if (curs_pos.x <= (snowball2_pos.x + 10) && curs_pos.x >= (snowball2_pos.x)) {
+            if (curs_pos.y <= (snowball2_pos.y + 10) && curs_pos.y >= snowball2_pos.y) {
                 (*game)->obj_level2[2] = 1;
             }
         }

@@ -29,7 +29,7 @@ void init_level3(s_game_t **game)
     (*game)->obj_level3[0] = 0;
     (*game)->obj_level3[1] = 0;
     (*game)->obj_level3[2] = 0;
-    (*game)->level[3] = create_my_sprite("./image/Fond_Level3.jpg");
+    (*game)->level[3] = create_my_sprite("./image/Fond_Level3.png");
 }
 
 s_game_t *init_struct(void)
